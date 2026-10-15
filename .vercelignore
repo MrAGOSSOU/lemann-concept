@@ -1,0 +1,6 @@
+# Exclure les vidéos lourdes brutes pour le déploiement web
+images/Showroom/*.MOV
+*.mp4
+*.MP4
+.DS_Store
+.git

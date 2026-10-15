@@ -1,0 +1,1770 @@
+/* ==========================================================================
+   LEMANN — MAISON D'OPTIQUE CONTEMPORAINE (COTONOU)
+   Direction Artistique : Quiet Luxury, Minimalisme Chaud, Pureté & Précision
+   Conception Digitale : Omnika Digit
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES & DESIGN SYSTEM (TOKENS)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Nuances de Fonds (Ivoire / Pierre Claire) */
+  --color-bg-ivory: #FAF8F5;
+  --color-bg-warm: #F4EFEB;
+  --color-bg-sand: #EAE4DC;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-dark: #121110;
+  --color-bg-dark-soft: #1A1918;
+  --color-bg-graphite: #242220;
+
+  /* Teintes de Textes & Contrastes */
+  --color-text-main: #1D1C1B;
+  --color-text-muted: #645F5A;
+  --color-text-subtle: #8E8881;
+  --color-text-light: #F7F5F0;
+  --color-text-light-muted: #BDB7AE;
+
+  /* Accents Métalliques & Brun Chaud */
+  --color-accent-champagne: #C8A882;
+  --color-accent-champagne-light: #DFC4A6;
+  --color-accent-espresso: #2A1F1A;
+  --color-accent-gold-subtle: rgba(200, 168, 130, 0.2);
+
+  /* Bordures Délicates */
+  --border-light: 1px solid rgba(29, 28, 27, 0.08);
+  --border-medium: 1px solid rgba(29, 28, 27, 0.14);
+  --border-dark: 1px solid rgba(255, 255, 255, 0.12);
+  --border-gold: 1px solid rgba(200, 168, 130, 0.35);
+
+  /* Typographie */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Rayons de Courbure (Très subtils, jamais agressifs) */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Ombres Nuancées (Subtiles et atmosphériques) */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.08);
+  --shadow-dropdown: 0 24px 48px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Container */
+  --container-max: 1240px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-ivory);
+  color: var(--color-text-main);
+  line-height: 1.65;
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY SYSTEM
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text-main);
+  letter-spacing: -0.01em;
+}
+
+.hero-title {
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--color-text-light);
+  margin-bottom: 1.25rem;
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-weight: 400;
+  color: var(--color-text-main);
+  margin-bottom: 1rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-accent-champagne);
+  margin-bottom: 0.85rem;
+}
+
+.section-description {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--color-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT & CONTAINERS
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   5. BUTTONS & INTERACTIVE ELEMENTS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-smooth);
+  position: relative;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-espresso);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-accent-espresso);
+}
+
+.btn-primary:hover {
+  background-color: #3b2c25;
+  border-color: #3b2c25;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(42, 31, 26, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-light);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-light {
+  background-color: transparent;
+  color: var(--color-text-main);
+  border: var(--border-medium);
+}
+
+.btn-secondary-light:hover {
+  background-color: var(--color-bg-sand);
+  border-color: var(--color-text-main);
+}
+
+.btn-outline-nav {
+  font-size: 0.72rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-text-light);
+  border-radius: var(--radius-pill);
+}
+
+.scrolled .btn-outline-nav {
+  border-color: rgba(29, 28, 27, 0.25);
+  color: var(--color-text-main);
+}
+
+.btn-outline-nav:hover {
+  border-color: var(--color-accent-champagne);
+  color: var(--color-accent-champagne);
+  transform: translateY(-1px);
+}
+
+.btn-lg {
+  padding: 1.15rem 2.4rem;
+  font-size: 0.88rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-whatsapp-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #1F2E23;
+  color: #E2F5E6;
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  padding: 1.15rem 2.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-smooth);
+}
+
+.btn-whatsapp-large:hover {
+  background-color: #273b2c;
+  border-color: rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   6. CONCEPT TOP BAR
+   -------------------------------------------------------------------------- */
+.concept-banner {
+  background-color: #181716;
+  color: #A39D95;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 1001;
+}
+
+.concept-banner span {
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------------------------------
+   7. SITE HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 25px; /* right below concept banner initially */
+  left: 0;
+  right: 0;
+  z-index: 1020;
+  padding: 1.25rem 0;
+  transition: all var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  top: 0;
+  padding: 0.85rem 0;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: var(--border-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.header-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity var(--transition-fast);
+}
+
+.logo-dark {
+  display: none;
+}
+
+.site-header.scrolled .logo-light {
+  display: none;
+}
+
+.site-header.scrolled .logo-dark {
+  display: block;
+}
+
+/* Desktop Navigation */
+.desktop-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.desktop-nav .nav-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-light);
+  opacity: 0.85;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.desktop-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--color-accent-champagne);
+  transition: width var(--transition-smooth);
+}
+
+.desktop-nav .nav-link:hover {
+  opacity: 1;
+}
+
+.desktop-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.site-header.scrolled .desktop-nav .nav-link {
+  color: var(--color-text-main);
+  opacity: 0.8;
+}
+
+.site-header.scrolled .desktop-nav .nav-link:hover {
+  opacity: 1;
+  color: var(--color-text-main);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Mobile Toggle Hamburger */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 1010;
+}
+
+.burger-bar {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background-color: var(--color-text-light);
+  transition: transform var(--transition-smooth), background-color var(--transition-fast);
+}
+
+.site-header.scrolled .burger-bar {
+  background-color: var(--color-text-main);
+}
+
+.mobile-toggle.active .burger-bar:first-child {
+  transform: translateY(3.75px) rotate(45deg);
+  background-color: var(--color-text-light);
+}
+
+.mobile-toggle.active .burger-bar:last-child {
+  transform: translateY(-3.75px) rotate(-45deg);
+  background-color: var(--color-text-light);
+}
+
+/* --------------------------------------------------------------------------
+   8. MOBILE MENU FULLSCREEN OVERLAY
+   -------------------------------------------------------------------------- */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #121110;
+  z-index: 1005;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-inner {
+  padding: 3rem var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mobile-menu-brand {
+  margin-bottom: 2rem;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-text-light);
+  transition: color var(--transition-fast);
+  display: block;
+}
+
+.mobile-nav-link:hover {
+  color: var(--color-accent-champagne);
+}
+
+.mobile-menu-footer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-location {
+  color: var(--color-text-subtle);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   9. SECTION 1 — HERO SPECTACULAIRE
+   -------------------------------------------------------------------------- */
+.section-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem var(--container-padding) 4rem;
+  overflow: hidden;
+  background-color: var(--color-bg-dark);
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+  transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-hero:hover .hero-bg-img {
+  transform: scale(1.0);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Dégradé doux et luxueux : préserve la beauté architecturale de la vraie façade tout en garantissant un contraste lisible parfait */
+  background: radial-gradient(circle at center, rgba(18, 17, 16, 0.45) 0%, rgba(18, 17, 16, 0.82) 100%),
+              linear-gradient(180deg, rgba(18, 17, 16, 0.6) 0%, rgba(18, 17, 16, 0.4) 40%, rgba(18, 17, 16, 0.9) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-brand-mark {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-signature-logo {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color-accent-champagne-light);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: #DDD6CE;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0.7;
+}
+
+.scroll-text {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-light);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(180deg, var(--color-accent-champagne) 0%, transparent 100%);
+  animation: scrollPulse 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollPulse {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* --------------------------------------------------------------------------
+   10. SECTION 2 — COLLECTIONS (TROUVEZ VOTRE SIGNATURE)
+   -------------------------------------------------------------------------- */
+.section-collections {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: var(--color-bg-ivory);
+}
+
+.section-header {
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.collection-card {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: var(--border-light);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #EDE8E1;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.collection-card:hover .card-img {
+  transform: scale(1.06);
+}
+
+.card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(250, 248, 245, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-main);
+  border-radius: var(--radius-xs);
+}
+
+.card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.85rem;
+  font-weight: 400;
+  margin-bottom: 0.65rem;
+  color: var(--color-text-main);
+}
+
+.card-text {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent-espresso);
+  align-self: flex-start;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.card-link:hover {
+  color: var(--color-accent-champagne);
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. SECTION 3 — EXPÉRIENCE LEMANN (ÉDITORIAL)
+   -------------------------------------------------------------------------- */
+.section-experience {
+  padding: clamp(5rem, 8vw, 8.5rem) 0;
+  background-color: var(--color-bg-warm);
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+}
+
+.editorial-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 6rem);
+  align-items: center;
+}
+
+.editorial-media .media-frame {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.editorial-img {
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.media-frame:hover .editorial-img {
+  transform: scale(1.02);
+}
+
+.media-tag-overlay {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background: rgba(18, 17, 16, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-text-light);
+  padding: 0.5rem 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+}
+
+.editorial-content {
+  padding-right: 1rem;
+}
+
+.editorial-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+
+.editorial-lead {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 2.25rem;
+}
+
+.editorial-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-top: var(--border-light);
+  padding-top: 1.75rem;
+}
+
+.point-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.point-num {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-accent-champagne);
+  line-height: 1;
+}
+
+.point-item h4 {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.point-item p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   12. SECTION 4 — LA MAISON & LE MANIFESTE
+   -------------------------------------------------------------------------- */
+.section-maison {
+  padding: clamp(5.5rem, 8vw, 9rem) 0;
+  background-color: var(--color-bg-ivory);
+}
+
+.maison-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(3rem, 6vw, 6.5rem);
+  align-items: center;
+}
+
+.maison-main-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.maison-subtitle {
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.maison-paragraphs {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Citation officielle issue du mur du showroom */
+.maison-manifesto {
+  background-color: var(--color-bg-warm);
+  border-left: 2px solid var(--color-accent-champagne);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.maison-manifesto p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--color-text-main);
+  margin-bottom: 0.75rem;
+}
+
+.maison-manifesto cite {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-subtle);
+}
+
+.maison-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  background: var(--color-bg-surface);
+  border: var(--border-light);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+}
+
+.meta-icon {
+  color: var(--color-accent-champagne);
+}
+
+/* Composition Photo Diptyque */
+.maison-composition {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.composition-card {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.composition-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.composition-card:hover img {
+  transform: scale(1.03);
+}
+
+.card-primary {
+  max-width: 90%;
+  align-self: flex-start;
+}
+
+.card-secondary {
+  max-width: 75%;
+  align-self: flex-end;
+  margin-top: -3.5rem;
+  border: 4px solid var(--color-bg-ivory);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   13. SECTION 5 — SERVICES ÉDITORIAUX
+   -------------------------------------------------------------------------- */
+.section-services {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.section-services .section-tag {
+  color: var(--color-accent-champagne-light);
+}
+
+.section-services .section-title {
+  color: var(--color-text-light);
+}
+
+.header-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: var(--border-dark);
+  padding-bottom: 2.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.section-description-aside {
+  font-size: 1rem;
+  color: var(--color-text-light-muted);
+  max-width: 380px;
+  line-height: 1.6;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 80px 1.4fr 2fr 1.2fr;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: var(--border-dark);
+  transition: background-color var(--transition-fast);
+}
+
+.service-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.service-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-accent-champagne);
+}
+
+.service-name {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--color-text-light);
+}
+
+.service-col-desc p {
+  font-size: 0.92rem;
+  color: var(--color-text-light-muted);
+  line-height: 1.65;
+  padding-right: 2rem;
+}
+
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent-champagne-light);
+  transition: all var(--transition-fast);
+}
+
+.service-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.service-btn:hover {
+  color: #FFFFFF;
+}
+
+.service-btn:hover .service-arrow {
+  transform: translateX(6px);
+}
+
+/* --------------------------------------------------------------------------
+   14. SECTION 6 — SECTION BOUTIQUE IMMERSIVE
+   -------------------------------------------------------------------------- */
+.section-boutique {
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background-color: var(--color-bg-ivory);
+}
+
+.boutique-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+}
+
+.boutique-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.boutique-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.boutique-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(18, 17, 16, 0.88) 0%, rgba(18, 17, 16, 0.6) 50%, rgba(18, 17, 16, 0.25) 100%);
+}
+
+.boutique-content {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--color-text-light);
+}
+
+.boutique-city-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-accent-champagne-light);
+  margin-bottom: 1rem;
+}
+
+.boutique-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+  color: var(--color-text-light);
+  margin-bottom: 1.25rem;
+}
+
+.boutique-desc {
+  font-size: 1rem;
+  color: #DDD6CE;
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+}
+
+.boutique-actions {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.boutique-actions .btn-secondary-light {
+  color: var(--color-text-light);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.boutique-actions .btn-secondary-light:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   15. SECTION 7 — CALL TO ACTION FINAL
+   -------------------------------------------------------------------------- */
+.section-cta {
+  padding: clamp(5.5rem, 9vw, 9.5rem) 0;
+  background-color: var(--color-bg-warm);
+  border-top: var(--border-light);
+}
+
+.cta-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.cta-mark {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-logo {
+  filter: invert(1);
+  height: 48px;
+  width: auto;
+  opacity: 0.85;
+}
+
+.cta-title {
+  font-size: clamp(2.5rem, 4.8vw, 4.2rem);
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.cta-subtitle {
+  font-size: 1.08rem;
+  color: var(--color-text-muted);
+  max-width: 540px;
+  margin: 0 auto 2.75rem;
+  line-height: 1.7;
+}
+
+.cta-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   16. SECTION 8 — FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #121110;
+  color: var(--color-text-light);
+  padding: 5rem 0 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo {
+  height: 42px;
+  width: auto;
+  margin-bottom: 1.25rem;
+}
+
+.footer-tagline {
+  color: var(--color-text-subtle);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-heading {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-champagne-light);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--color-text-light-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-champagne);
+}
+
+.footer-location-text {
+  font-size: 0.85rem;
+  color: var(--color-text-light-muted);
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.78rem;
+  color: var(--color-text-subtle);
+}
+
+.footer-credits strong {
+  color: var(--color-accent-champagne-light);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   17. FLOATING WHATSAPP BUTTON (DISCRET & LUXUEUX)
+   -------------------------------------------------------------------------- */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+}
+
+.whatsapp-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background-color: #19271D;
+  color: #38D970;
+  border: 1px solid rgba(56, 217, 112, 0.35);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.whatsapp-bubble:hover {
+  transform: scale(1.08) translateY(-2px);
+  background-color: #213527;
+  border-color: #38D970;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 64px;
+  white-space: nowrap;
+  background: rgba(18, 17, 16, 0.9);
+  backdrop-filter: blur(8px);
+  color: #FAF8F5;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-xs);
+  border: var(--border-dark);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all var(--transition-fast);
+  pointer-events: none;
+}
+
+.floating-whatsapp:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   18. MODALS (RDV & COLLECTION PREVIEW)
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 17, 16, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+  max-width: 520px;
+  width: 100%;
+  padding: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  box-shadow: var(--shadow-dropdown);
+  border: var(--border-light);
+  transform: translateY(20px) scale(0.98);
+  transition: transform var(--transition-smooth);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-backdrop.active .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-text-subtle);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: var(--color-text-main);
+  background-color: var(--color-bg-sand);
+}
+
+.modal-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-champagne);
+  margin-bottom: 0.5rem;
+}
+
+.modal-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+/* RDV Form */
+.rdv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  border: 1px solid rgba(29, 28, 27, 0.18);
+  border-radius: var(--radius-xs);
+  background-color: var(--color-bg-ivory);
+  color: var(--color-text-main);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-accent-espresso);
+  background-color: #FFFFFF;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.col-half {
+  flex: 1;
+}
+
+.form-disclaimer {
+  font-size: 0.72rem;
+  color: var(--color-text-subtle);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Modal Collection Details */
+.modal-collection-card {
+  max-width: 820px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.coll-modal-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.coll-modal-media {
+  background-color: #E7E3DC;
+}
+
+.coll-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coll-modal-info {
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.coll-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+  border-top: var(--border-light);
+  border-bottom: var(--border-light);
+  padding: 1.25rem 0;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.spec-label {
+  color: var(--color-text-subtle);
+}
+
+.spec-val {
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+/* --------------------------------------------------------------------------
+   19. CUSTOM CURSOR (DESKTOP)
+   -------------------------------------------------------------------------- */
+@media (pointer: fine) {
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-accent-champagne);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s, transform 0.1s ease-out;
+  }
+
+  .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(200, 168, 130, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.18s ease-out;
+  }
+
+  body:hover .cursor-dot,
+  body:hover .cursor-outline {
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-outline {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   20. ANIMATIONS AU SCROLL & CHARGEMENT
+   -------------------------------------------------------------------------- */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-brand-mark.reveal-item { animation-delay: 0.15s; }
+.hero-eyebrow.reveal-item { animation-delay: 0.3s; }
+.hero-title.reveal-item { animation-delay: 0.45s; }
+.hero-subtitle.reveal-item { animation-delay: 0.6s; }
+.hero-cta-group.reveal-item { animation-delay: 0.75s; }
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   21. RESPONSIVE DESIGN (MOBILE-FIRST POLISH)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .service-row {
+    grid-template-columns: 60px 1.2fr 2fr auto;
+    padding: 2rem 0;
+  }
+  
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 860px) {
+  /* Navigation */
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  #navRdvBtn {
+    display: none; /* In header on small screens, use mobile menu */
+  }
+
+  /* Collections */
+  .collections-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Editorial */
+  .editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .editorial-content {
+    padding-right: 0;
+  }
+
+  /* Maison */
+  .maison-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .card-primary {
+    max-width: 100%;
+  }
+
+  .card-secondary {
+    max-width: 80%;
+    margin-top: -2.5rem;
+  }
+
+  /* Services */
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .service-col-num {
+    margin-bottom: -0.5rem;
+  }
+
+  .service-col-desc p {
+    padding-right: 0;
+  }
+
+  /* Boutique */
+  .boutique-card {
+    min-height: 440px;
+  }
+
+  .boutique-scrim {
+    background: linear-gradient(180deg, rgba(18, 17, 16, 0.4) 0%, rgba(18, 17, 16, 0.9) 80%);
+  }
+
+  .boutique-content {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Modal Collection */
+  .coll-modal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .coll-modal-media {
+    max-height: 260px;
+  }
+
+  .coll-modal-info {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1.15rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .cta-button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-button-group .btn,
+  .cta-button-group .btn-whatsapp-large {
+    width: 100%;
+  }
+
+  .boutique-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .boutique-actions .btn {
+    width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

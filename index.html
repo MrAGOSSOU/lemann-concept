@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>LEMANN — Maison d’Optique & Lunetterie Contemporaine | Cotonou</title>
+  <meta name="description" content="Maison d'optique haut de gamme à Cotonou, Bénin. Une sélection de lunettes pensée pour celles et ceux qui considèrent leur regard comme une signature.">
+  <meta name="keywords" content="Lemann, opticien Cotonou, lunettes de vue Bénin, lunettes solaires haut de gamme, optique de luxe Cotonou">
+  <meta name="author" content="Omnika Digit">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LEMANN — L’élégance au regard">
+  <meta property="og:description" content="Une sélection de lunettes pensée pour celles et ceux qui considèrent leur regard comme une signature. Maison d'optique à Cotonou.">
+  <meta property="og:image" content="images/optimized/Fasssade.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Cormorant Garamond (Serif de luxe) & Plus Jakarta Sans (Modern Clean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor Dot (Desktop only) -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-outline" id="cursorOutline" aria-hidden="true"></div>
+
+  <!-- Announcement / Concept Badge (Top subtle bar) -->
+  <aside class="concept-banner" aria-label="Mention Concept">
+    <div class="banner-inner">
+      <span>Digital Experience Concept &bull; Réalisé par Omnika Digit pour la Maison LEMANN &bull; Cotonou</span>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="LEMANN Accueil">
+        <img src="images/optimized/logo-white.png" alt="LEMANN" class="logo-img logo-light" width="160" height="54">
+        <img src="images/optimized/logo-black.png" alt="LEMANN" class="logo-img logo-dark" width="160" height="54">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="#experience" class="nav-link">L'Expérience</a></li>
+          <li><a href="#maison" class="nav-link">La Maison</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#boutique" class="nav-link">La Boutique</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action -->
+      <div class="header-actions">
+        <button type="button" class="btn btn-outline-nav btn-open-rdv" id="navRdvBtn">
+          <span>Prendre rendez-vous</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Navigation Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-brand">
+        <img src="images/optimized/logo-white.png" alt="LEMANN" width="140" height="48">
+      </div>
+      <nav class="mobile-nav" aria-label="Navigation mobile">
+        <ul>
+          <li><a href="#collections" class="mobile-nav-link">Collections</a></li>
+          <li><a href="#experience" class="mobile-nav-link">L'Expérience</a></li>
+          <li><a href="#maison" class="mobile-nav-link">La Maison</a></li>
+          <li><a href="#services" class="mobile-nav-link">Services</a></li>
+          <li><a href="#boutique" class="mobile-nav-link">La Boutique</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-footer">
+        <button type="button" class="btn btn-primary btn-block btn-open-rdv">Prendre rendez-vous</button>
+        <p class="mobile-location">Cotonou — Bénin</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <!-- ==============================================
+         SECTION 1: HERO SPECTACULAIRE
+         ============================================== -->
+    <section class="section-hero" id="hero" aria-label="Accueil Lemann">
+      <div class="hero-bg-wrapper">
+        <picture>
+          <source srcset="images/optimized/Fasssade.webp" type="image/webp">
+          <img src="images/Showroom/Fasssade.JPG" alt="Façade de la boutique Lemann à Cotonou" class="hero-bg-img" loading="eager" fetchpriority="high">
+        </picture>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal-item">Haute Optique Contemporaine &bull; Cotonou</p>
+
+        <h1 class="hero-title reveal-item">
+          L’élégance au regard.
+        </h1>
+
+        <p class="hero-subtitle reveal-item">
+          Une sélection de lunettes pensée pour celles et ceux qui considèrent leur regard comme une signature.
+        </p>
+
+        <div class="hero-cta-group reveal-item">
+          <a href="#collections" class="btn btn-primary">
+            <span>Découvrir la collection</span>
+          </a>
+          <button type="button" class="btn btn-secondary btn-open-rdv">
+            <span>Prendre rendez-vous</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="scroll-text">Découvrir l'univers</span>
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 2: COLLECTIONS
+         ============================================== -->
+    <section class="section-collections" id="collections">
+      <div class="container">
+        
+        <header class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">Curations Exclusives</span>
+          <h2 class="section-title">Trouvez votre signature.</h2>
+          <p class="section-description">
+            Chaque silhouette est sélectionnée pour son équilibre subtil entre haute précision optique, proportions sculpturales et confort absolu.
+          </p>
+        </header>
+
+        <div class="collections-grid">
+          
+          <!-- Card 1: Lunettes de Vue -->
+          <article class="collection-card reveal-on-scroll" data-collection="vue">
+            <div class="card-media">
+              <img src="images/optimized/collection-vue.webp" alt="Sélection de lunettes de vue Lemann" class="card-img" loading="lazy">
+              <span class="card-badge">Optique</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Lunettes de vue</h3>
+              <p class="card-text">
+                Clarté visuelle et pureté des lignes. L’alliance d’une monture raffinée et d’un confort quotidien sans compromis.
+              </p>
+              <button type="button" class="card-link btn-collection-modal" data-target="vue">
+                <span>Explorer la sélection</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Lunettes Solaires -->
+          <article class="collection-card reveal-on-scroll" data-collection="solaires">
+            <div class="card-media">
+              <img src="images/optimized/collection-solaires.webp" alt="Sélection de lunettes solaires Lemann" class="card-img" loading="lazy">
+              <span class="card-badge">Solaire</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Lunettes solaires</h3>
+              <p class="card-text">
+                Allure &amp; protection d’exception. Des silhouettes audacieuses et élégantes qui magnifient votre présence sous la lumière.
+              </p>
+              <button type="button" class="card-link btn-collection-modal" data-target="solaires">
+                <span>Explorer la sélection</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: Montures -->
+          <article class="collection-card reveal-on-scroll" data-collection="montures">
+            <div class="card-media">
+              <img src="images/optimized/collection-montures.webp" alt="Montures de créateurs en showroom Lemann" class="card-img" loading="lazy">
+              <span class="card-badge">Haute Façon</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Montures</h3>
+              <p class="card-text">
+                Matières nobles &amp; savoir-faire singulier. Des pièces de créateurs façonnées comme de véritables pièces de collection.
+              </p>
+              <button type="button" class="card-link btn-collection-modal" data-target="montures">
+                <span>Explorer la sélection</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 3: SECTION EXPÉRIENCE LEMANN
+         ============================================== -->
+    <section class="section-experience" id="experience">
+      <div class="container">
+        
+        <div class="editorial-layout">
+          
+          <!-- Image à gauche sur desktop -->
+          <div class="editorial-media reveal-on-scroll">
+            <div class="media-frame">
+              <img src="images/optimized/IMG_9863.webp" alt="Showroom et espace de consultation Lemann Cotonou" class="editorial-img" loading="lazy">
+              <div class="media-tag-overlay">
+                <span>L'Espace Privé &bull; Showroom Cotonou</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Texte à droite sur desktop -->
+          <div class="editorial-content reveal-on-scroll">
+            <span class="section-tag">Une approche intime</span>
+            
+            <h2 class="editorial-title">
+              Une expérience pensée autour de vous.
+            </h2>
+
+            <p class="editorial-lead">
+              Chez Lemann, le choix d’une monture devient une expérience. Un espace pensé pour vous permettre de découvrir, essayer et trouver la paire qui correspond véritablement à votre style.
+            </p>
+
+            <div class="editorial-points">
+              <div class="point-item">
+                <span class="point-num">01</span>
+                <div>
+                  <h4>Écoute &amp; Morphologie</h4>
+                  <p>Étude attentive des proportions de votre visage, de vos habitudes et de votre personnalité stylistique.</p>
+                </div>
+              </div>
+              <div class="point-item">
+                <span class="point-num">02</span>
+                <div>
+                  <h4>Salon Privé d'Essayage</h4>
+                  <p>Un écrin chaleureux et intimiste aux alcôves lumineuses pour prendre le temps d'apprécier chaque nuance.</p>
+                </div>
+              </div>
+              <div class="point-item">
+                <span class="point-num">03</span>
+                <div>
+                  <h4>Précision Millimétrée</h4>
+                  <p>Ajustement personnalisé des branches, du pont et des verres pour un confort qui s'oublie.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-cta">
+              <button type="button" class="btn btn-primary btn-open-rdv">
+                <span>Vivre l'expérience en salon</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 4: LA MAISON & LE MANIFESTE
+         ============================================== -->
+    <section class="section-maison" id="maison">
+      <div class="container">
+        
+        <div class="maison-grid">
+          
+          <div class="maison-text-col reveal-on-scroll">
+            <span class="section-tag">Identité &amp; Philosophie</span>
+            <h2 class="maison-main-title">LEMANN</h2>
+            <h3 class="maison-subtitle">Une vision contemporaine de l’optique.</h3>
+
+            <div class="maison-paragraphs">
+              <p>
+                Née d'une exigence sans compromis, la Maison Lemann réunit le conseil morphologique, la haute précision optique et l’émotion du design contemporain.
+              </p>
+              <p>
+                Ici, l'optique dépasse la simple fonction pour devenir l’expression d’une allure et d’une singularité.
+              </p>
+            </div>
+
+            <!-- VRAI MANIFESTE DE LA BOUTIQUE ISSU DU MUR LEMANN -->
+            <blockquote class="maison-manifesto">
+              <p>
+                « Nos montures ne sont pas de simples lunettes, mais des œuvres pensées pour sublimer le regard. Porter Lemann, c’est embrasser un monde où le détail devient langage, et où chaque regard porte la signature de l’excellence. »
+              </p>
+              <cite>— Manifeste de la Maison Lemann</cite>
+            </blockquote>
+
+            <div class="maison-meta">
+              <div class="meta-pill">
+                <span class="meta-icon">&bull;</span>
+                <span>Excellence artisanale</span>
+              </div>
+              <div class="meta-pill">
+                <span class="meta-icon">&bull;</span>
+                <span>Sélection internationale</span>
+              </div>
+              <div class="meta-pill">
+                <span class="meta-icon">&bull;</span>
+                <span>Service sur-mesure</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="maison-media-col reveal-on-scroll">
+            <div class="maison-composition">
+              <div class="composition-card card-primary">
+                <img src="images/optimized/IMG_9875.webp" alt="Mur manifeste et présentoirs sculpturaux Lemann" loading="lazy">
+              </div>
+              <div class="composition-card card-secondary">
+                <img src="images/optimized/logo2.webp" alt="Logo Lemann en relief sur pierre murale" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 5: SERVICES ÉDITORIAUX
+         ============================================== -->
+    <section class="section-services" id="services">
+      <div class="container">
+        
+        <header class="section-header reveal-on-scroll">
+          <div class="header-split">
+            <div>
+              <span class="section-tag">Savoir-Faire</span>
+              <h2 class="section-title">L’art du service optique.</h2>
+            </div>
+            <p class="section-description-aside">
+              Un accompagnement pensé avec rigueur et raffinement à chaque étape de votre choix.
+            </p>
+          </div>
+        </header>
+
+        <div class="services-list">
+          
+          <!-- Service 01 -->
+          <div class="service-row reveal-on-scroll">
+            <div class="service-col-num">
+              <span class="service-number">01</span>
+            </div>
+            <div class="service-col-title">
+              <h3 class="service-name">Conseil personnalisé</h3>
+            </div>
+            <div class="service-col-desc">
+              <p>Une analyse morphologique et esthétique individuelle menée par nos spécialistes pour révéler la monture en parfaite résonance avec vos traits et votre style de vie.</p>
+            </div>
+            <div class="service-col-action">
+              <button type="button" class="service-btn btn-open-rdv" data-service="Conseil personnalisé" aria-label="Réserver conseil personnalisé">
+                <span class="service-btn-label">Prendre rendez-vous</span>
+                <span class="service-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 02 -->
+          <div class="service-row reveal-on-scroll">
+            <div class="service-col-num">
+              <span class="service-number">02</span>
+            </div>
+            <div class="service-col-title">
+              <h3 class="service-name">Lunettes de vue</h3>
+            </div>
+            <div class="service-col-desc">
+              <p>Centrage haute précision et technologies de verres de dernière génération adaptées à vos prescriptions médicales, montées dans des montures d'exception.</p>
+            </div>
+            <div class="service-col-action">
+              <button type="button" class="service-btn btn-open-rdv" data-service="Lunettes de vue" aria-label="Réserver lunettes de vue">
+                <span class="service-btn-label">Prendre rendez-vous</span>
+                <span class="service-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 03 -->
+          <div class="service-row reveal-on-scroll">
+            <div class="service-col-num">
+              <span class="service-number">03</span>
+            </div>
+            <div class="service-col-title">
+              <h3 class="service-name">Lunettes solaires</h3>
+            </div>
+            <div class="service-col-desc">
+              <p>Protection anti-UV certifiée et verres polarisés haute définition, combinés aux silhouettes solaires les plus recherchées de la saison.</p>
+            </div>
+            <div class="service-col-action">
+              <button type="button" class="service-btn btn-open-rdv" data-service="Lunettes solaires" aria-label="Réserver lunettes solaires">
+                <span class="service-btn-label">Prendre rendez-vous</span>
+                <span class="service-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 04 -->
+          <div class="service-row reveal-on-scroll">
+            <div class="service-col-num">
+              <span class="service-number">04</span>
+            </div>
+            <div class="service-col-title">
+              <h3 class="service-name">Accompagnement optique</h3>
+            </div>
+            <div class="service-col-desc">
+              <p>Suivi attentionné dans le temps : réajustement régulier, nettoyage aux ultrasons, remplacement des composants et garantie de votre confort visuel.</p>
+            </div>
+            <div class="service-col-action">
+              <button type="button" class="service-btn btn-open-rdv" data-service="Accompagnement optique" aria-label="Réserver accompagnement optique">
+                <span class="service-btn-label">Prendre rendez-vous</span>
+                <span class="service-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 6: SECTION BOUTIQUE IMMERSIVE
+         ============================================== -->
+    <section class="section-boutique" id="boutique">
+      <div class="container">
+        
+        <div class="boutique-card reveal-on-scroll">
+          <div class="boutique-media">
+            <img src="images/optimized/Fasssade.webp" alt="Façade moderne de Lemann à Cotonou" class="boutique-img" loading="lazy">
+            <div class="boutique-scrim"></div>
+          </div>
+
+          <div class="boutique-content">
+            <span class="boutique-city-badge">Cotonou, Bénin</span>
+            <h2 class="boutique-title">Venez découvrir Lemann.</h2>
+            <p class="boutique-desc">
+              Un écrin architectural contemporain pensé pour accueillir votre regard. Poussez les portes de notre showroom et laissez-vous guider par notre équipe d’experts.
+            </p>
+
+            <div class="boutique-actions">
+              <a href="https://maps.google.com/?q=Cotonou+Benin" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btnGoogleMaps">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Nous trouver</span>
+              </a>
+              <button type="button" class="btn btn-secondary-light btn-open-rdv">
+                <span>Prendre rendez-vous</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 7: CALL TO ACTION FINAL
+         ============================================== -->
+    <section class="section-cta" id="contact">
+      <div class="container">
+        
+        <div class="cta-inner text-center reveal-on-scroll">
+          <div class="cta-mark">
+            <img src="images/optimized/logo-white.png" alt="LEMANN" width="130" height="44" class="cta-logo">
+          </div>
+
+          <h2 class="cta-title">
+            Votre regard mérite une signature.
+          </h2>
+
+          <p class="cta-subtitle">
+            Prenez rendez-vous pour un échange privé en boutique ou contactez directement notre équipe via WhatsApp pour toute question.
+          </p>
+
+          <div class="cta-button-group">
+            <button type="button" class="btn btn-primary btn-lg btn-open-rdv">
+              <span>Prendre rendez-vous</span>
+            </button>
+            <a href="https://wa.me/22900000000?text=Bonjour%20Maison%20Lemann%2C%20je%20souhaite%20d%C3%A9couvrir%20vos%20collections%20de%20lunettes." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-large" id="ctaWhatsappBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.769.878 2.791.878 3.182 0 5.767-2.587 5.768-5.766 0-3.181-2.586-5.764-5.768-5.764zm3.364 8.167c-.14.394-.805.748-1.121.792-.317.043-.687.062-2.146-.543-1.638-.68-2.684-2.355-2.766-2.463-.081-.109-.659-.878-.659-1.673 0-.795.418-1.186.567-1.347.149-.161.325-.202.433-.202.109 0 .217.002.312.007.1.006.234-.038.366.278.135.326.46 1.123.5 1.205.04.082.067.177.013.285-.054.108-.081.176-.162.271-.081.095-.171.213-.244.286-.081.082-.167.171-.072.334.095.163.42 1.002 1.258 1.488.366.213.674.349.907.424.234.074.446.064.614.039.188-.027.805-.33 1.003-.648.199-.318.199-.59.139-.648-.06-.059-.217-.095-.434-.204s-1.282-.633-1.48-.705c-.199-.073-.344-.109-.49.109-.145.217-.563.705-.69.85-.127.145-.254.163-.471.054zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.306A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+              <span>Nous contacter sur WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       SECTION 8: FOOTER MINIMALISTE DE LUXE
+       ============================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/optimized/logo-white.png" alt="LEMANN" class="footer-logo" width="150" height="50">
+          <p class="footer-tagline">Maison d’optique contemporaine &bull; Cotonou, Bénin</p>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-heading">Navigation</span>
+          <ul class="footer-links">
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#experience">La Maison</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#boutique">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-heading">Maison Lemann</span>
+          <p class="footer-location-text">
+            Cotonou — Bénin<br>
+            Showroom &amp; Salon privé
+          </p>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-heading">Correspondance</span>
+          <ul class="footer-links footer-socials">
+            <li><a href="https://wa.me/22900000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://maps.google.com/?q=Cotonou+Benin" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 LEMANN. Tous droits réservés.</p>
+        <!-- Mention discrète requise -->
+        <p class="footer-credits">Digital concept by <strong>Omnika Digit</strong></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==============================================
+       MODAL DE RENDEZ-VOUS INTERACTIF (EXPÉRIENCE LUXE)
+       ============================================== -->
+  <div class="modal-backdrop" id="rdvModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="closeModalBtn" aria-label="Fermer le dialogue">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-tag">Salon Privé LEMANN</span>
+        <h3 id="modalTitle" class="modal-title">Prendre rendez-vous</h3>
+        <p class="modal-subtitle">Bénéficiez d'un accueil sur mesure et de conseils avisés dans notre showroom à Cotonou.</p>
+      </div>
+
+      <form id="rdvForm" class="rdv-form">
+        <div class="form-group">
+          <label for="rdvName">Votre Nom &amp; Prénom</label>
+          <input type="text" id="rdvName" name="name" required placeholder="Ex : Sarah Dossou" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="rdvPhone">Numéro WhatsApp / Téléphone</label>
+          <input type="tel" id="rdvPhone" name="phone" required placeholder="Ex : +229 97 00 00 00" autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="rdvService">Service souhaité</label>
+          <select id="rdvService" name="service">
+            <option value="Conseil personnalisé & morphologie">Conseil personnalisé &amp; morphologie</option>
+            <option value="Choix de lunettes de vue">Choix de lunettes de vue</option>
+            <option value="Sélection de lunettes solaires">Sélection de lunettes solaires</option>
+            <option value="Accompagnement optique & ajustement">Accompagnement optique &amp; ajustement</option>
+            <option value="Visite découverte du showroom">Visite découverte du showroom</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-half">
+            <label for="rdvDate">Date souhaitée</label>
+            <input type="date" id="rdvDate" name="date">
+          </div>
+          <div class="form-group col-half">
+            <label for="rdvTime">Créneau préféré</label>
+            <select id="rdvTime" name="time">
+              <option value="Matin (10h - 13h)">Matin (10h - 13h)</option>
+              <option value="Après-midi (14h - 17h)">Après-midi (14h - 17h)</option>
+              <option value="Fin de journée (17h - 19h)">Fin de journée (17h - 19h)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <span>Confirmer via WhatsApp</span>
+        </button>
+
+        <p class="form-disclaimer">
+          Votre demande sera transmise directement au service relation client de Lemann via WhatsApp pour confirmation immédiate.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       MODAL APERÇU COLLECTION (EXPLORATION)
+       ============================================== -->
+  <div class="modal-backdrop" id="collectionModal" aria-hidden="true" role="dialog" aria-labelledby="collModalTitle">
+    <div class="modal-card modal-collection-card">
+      <button type="button" class="modal-close" id="closeCollModalBtn" aria-label="Fermer la vue">&times;</button>
+      
+      <div class="coll-modal-layout">
+        <div class="coll-modal-media">
+          <img id="collModalImg" src="" alt="Détail collection Lemann" class="coll-modal-img">
+        </div>
+        <div class="coll-modal-info">
+          <span class="modal-tag" id="collModalTag">Collection</span>
+          <h3 id="collModalTitle" class="modal-title">Titre Collection</h3>
+          <p id="collModalDesc" class="modal-subtitle">Description détaillée de la collection...</p>
+
+          <div class="coll-specs">
+            <div class="spec-item">
+              <span class="spec-label">Disponibilité</span>
+              <span class="spec-val">En showroom à Cotonou</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Montage</span>
+              <span class="spec-val">Atelier de précision Lemann</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Essayage</span>
+              <span class="spec-val">Sur rendez-vous personnalisé</span>
+            </div>
+          </div>
+
+          <div class="coll-modal-actions">
+            <button type="button" class="btn btn-primary btn-block btn-open-rdv" id="collModalRdvBtn">
+              <span>Réserver un essayage</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       BOUTON FLOTTANT WHATSAPP DISCRET & LUXUEUX
+       ============================================== -->
+  <aside class="floating-whatsapp" aria-label="Contact WhatsApp rapide">
+    <a href="https://wa.me/22900000000?text=Bonjour%20Maison%20Lemann%2C%20je%20souhaite%20un%20renseignement%20sur%20vos%20collections." target="_blank" rel="noopener noreferrer" class="whatsapp-bubble" aria-label="Échanger avec Lemann sur WhatsApp" id="floatingWhatsappBtn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.769.878 2.791.878 3.182 0 5.767-2.587 5.768-5.766 0-3.181-2.586-5.764-5.768-5.764zm3.364 8.167c-.14.394-.805.748-1.121.792-.317.043-.687.062-2.146-.543-1.638-.68-2.684-2.355-2.766-2.463-.081-.109-.659-.878-.659-1.673 0-.795.418-1.186.567-1.347.149-.161.325-.202.433-.202.109 0 .217.002.312.007.1.006.234-.038.366.278.135.326.46 1.123.5 1.205.04.082.067.177.013.285-.054.108-.081.176-.162.271-.081.095-.171.213-.244.286-.081.082-.167.171-.072.334.095.163.42 1.002 1.258 1.488.366.213.674.349.907.424.234.074.446.064.614.039.188-.027.805-.33 1.003-.648.199-.318.199-.59.139-.648-.06-.059-.217-.095-.434-.204s-1.282-.633-1.48-.705c-.199-.073-.344-.109-.49.109-.145.217-.563.705-.69.85-.127.145-.254.163-.471.054zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.306A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      <span class="whatsapp-tooltip">Conseil direct Lemann</span>
+    </a>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
